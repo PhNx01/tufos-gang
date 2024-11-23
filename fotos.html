@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<link rel="stylesheet" href="style.css">
+
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotos</title>
+</head>
+
+<body>
+
+    <h1 style="text-align: center;">Galeria Automática</h1>
+    <div class="gallery" id="gallery"></div>
+
+</body>
+
+<script>
+    const imageNames = new Array(44).fill().map((_, i) => `./imagens/${i + 1}.jpg`);
+
+    const imagensDiv = document.getElementById('gallery');
+
+    imageNames.forEach((imageName) => {
+        const a = document.createElement('a');
+
+        a.href = imageName;
+
+        const img = document.createElement('img');
+
+        img.src = imageName;
+
+        a.appendChild(img);
+        imagensDiv.appendChild(a);
+    });
+</script>
+
+</html>
