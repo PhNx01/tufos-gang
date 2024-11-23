@@ -19,7 +19,7 @@
 </body>
 
 <script>
-    const imageNames = new Array(44).fill().map((_, i) => `./imagens/${i + 1}.jpg`);
+    const imageNames = new Array(150).fill().map((_, i) => `./imagens/${i + 1}.jpg`);
 
     const imagensDiv = document.getElementById('gallery');
 
@@ -34,6 +34,11 @@
 
         a.appendChild(img);
         imagensDiv.appendChild(a);
+
+
+        img.onerror = () => {
+            imagensDiv.removeChild(a);
+        }
     });
 </script>
 
